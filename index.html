@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SynergySpheres 3.0 | Futuristic AI 3D Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    canvas { display: block; position: fixed; top: 0; left: 0; z-index: -1; }
+    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 1rem; color: #38bdf8; }
+    .glass { backdrop-filter: blur(16px); background: rgba(255, 255, 255, 0.05); border-radius: 12px; }
+  </style>
+</head>
+<body>
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 text-white">
+    <h1 class="text-3xl font-bold text-cyan-400">SynergySpheres 3.0</h1>
+    <nav class="space-x-4">
+      <a href="#about" class="hover:text-cyan-300">About</a>
+      <a href="#services" class="hover:text-cyan-300">Services</a>
+      <a href="#projects" class="hover:text-cyan-300">Projects</a>
+      <a href="#contact" class="hover:text-cyan-300">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+    <h2 class="text-5xl md:text-6xl font-bold mb-4">Futuristic 3D Web Experience</h2>
+    <p class="text-lg max-w-xl">AI-Enhanced, Interactive, and Visually Immersive. Built with WebGL, Three.js, and modern UI frameworks.</p>
+    <button class="mt-6 px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full">Start Your Experience</button>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="section-title">About SynergySpheres 3.0</h2>
+    <p class="text-gray-300">We combine interactive frontend design with backend automation, Web3 integration, and AI-enhanced UX to deliver truly modern web solutions.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="section-title">360° Services</h2>
+    <div class="grid md:grid-cols-2 gap-10 text-gray-200">
+      <ul class="list-disc pl-5">
+        <li>WebGL / Three.js 3D Integrations</li>
+        <li>Parallax & Scroll-triggered Effects</li>
+        <li>AI Chatbot (Dialogflow, GPT, Custom)</li>
+        <li>Voice Interaction with Web Speech API</li>
+      </ul>
+      <ul class="list-disc pl-5">
+        <li>Animated Transitions & GSAP Effects</li>
+        <li>Floating 3D Avatars/Particles</li>
+        <li>SEO, Hosting, and Maintenance</li>
+        <li>GPT-based Interactive Onboarding</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects -->
+<section id="projects" class="py-16 px-6 max-w-6xl mx-auto">
+  <h2 class="section-title text-center">Featured Projects</h2>
+  <div class="flex overflow-x-auto space-x-6 mt-6 pb-4">
+    <div class="min-w-[300px] glass p-4 shadow-lg">
+      <img src="https://cdn.jsdelivr.net/gh/AbdulBasitNoor/assets@main/3d-realestate-portal.webp" alt="Howard Hanna" class="rounded mb-3">
+      <h3 class="text-xl font-bold text-cyan-400">Howard Hanna</h3>
+      <p class="text-sm text-gray-300">Category: Real Estate</p>
+    </div>
+    <div class="min-w-[300px] glass p-4 shadow-lg">
+      <img src="https://cdn.jsdelivr.net/gh/AbdulBasitNoor/assets@main/3d-ai-tools.webp" alt="Synergy GitHub" class="rounded mb-3">
+      <h3 class="text-xl font-bold text-cyan-400">Synergy GitHub</h3>
+      <p class="text-sm text-gray-300">Category: Automation</p>
+    </div>
+    <div class="min-w-[300px] glass p-4 shadow-lg">
+      <img src="https://cdn.jsdelivr.net/gh/AbdulBasitNoor/assets@main/3d-corporate-group.webp" alt="Metiri" class="rounded mb-3">
+      <h3 class="text-xl font-bold text-cyan-400">Metiri Group</h3>
+      <p class="text-sm text-gray-300">Category: Legal / Business</p>
+    </div>
+    <div class="min-w-[300px] glass p-4 shadow-lg">
+      <img src="https://cdn.jsdelivr.net/gh/AbdulBasitNoor/assets@main/3d-dashboards.webp" alt="Data Analytics" class="rounded mb-3">
+      <h3 class="text-xl font-bold text-cyan-400">Data Analytics Dashboard</h3>
+      <p class="text-sm text-gray-300">Category: Data / Visuals</p>
+      <a href="https://basytism.github.io/-PORTFOLIO-PROJECT-SET/" target="_blank" class="text-sm text-cyan-300 underline">View Project</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Contact / AI Assistant -->
+  <section id="contact" class="py-20 px-6 text-center max-w-3xl mx-auto">
+    <h2 class="section-title">Let’s Collaborate</h2>
+    <p class="mb-6 text-gray-300">Have an idea, a product, or a problem to solve? We combine AI and 3D UX to turn visions into real digital ecosystems.</p>
+    <a href="mailto:synergyspheres@gmail.com" class="bg-cyan-500 px-6 py-2 rounded-full text-white font-semibold hover:bg-cyan-600">Get in Touch</a>
+  </section>
+
+  <!-- Simple 3D Background Script -->
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    const geometry = new THREE.TorusKnotGeometry(10, 1.5, 100, 16);
+    const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
+    const torus = new THREE.Mesh(geometry, material);
+    scene.add(torus);
+    const light = new THREE.PointLight(0xffffff);
+    light.position.set(20, 20, 20);
+    scene.add(light);
+    camera.position.z = 30;
+    function animate() {
+      requestAnimationFrame(animate);
+      torus.rotation.x += 0.01;
+      torus.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
