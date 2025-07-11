@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | SynergySpheres 3.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: #38bdf8;
+      margin-top: 3rem;
+    }
+    .subtitle {
+      text-align: center;
+      color: #94a3b8;
+      max-width: 700px;
+      margin: 1rem auto 2rem auto;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background-color: rgba(56, 189, 248, 0.1);
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+    .card-desc {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="section-title">360° Services</h1>
+  <p class="subtitle">SynergySpheres 3.0 provides end-to-end digital and futuristic solutions—engineered with 3D design, AI, automation, and strategy for scale.</p>
+
+  <div class="service-grid">
+    <div class="card">
+      <h2 class="card-title">Web Development</h2>
+      <p class="card-desc">Responsive, interactive websites using Next.js, Tailwind, and modular HTML systems for businesses of the future.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">3D Web Experience</h2>
+      <p class="card-desc">Immersive WebGL/Three.js scenes, cinematic UI, and scroll-based animation with GSAP + custom shaders.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">Automation Workflows</h2>
+      <p class="card-desc">Build and deploy n8n, Zapier, and AI-driven workflows that streamline your backend and client engagement processes.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">AI Agents + Chatbots</h2>
+      <p class="card-desc">Deploy OpenAI/GPT-integrated bots, onboarding agents, and support systems powered by natural language interfaces.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">Smart Contracts + Web3</h2>
+      <p class="card-desc">Blockchain-based legal contracts, NFT integrations, and trustless digital interactions backed by Ethereum/Solana.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">UI/UX + Product Strategy</h2>
+      <p class="card-desc">User-first design systems, interactive mockups, branding kits, and roadmap development for tech startups and firms.</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">SEO & Analytics</h2>
+      <p class="card-desc">Technical SEO, Web Vitals optimization, content management, and interactive data dashboards (using Plotly, Dash, etc.).</p>
+    </div>
+    <div class="card">
+      <h2 class="card-title">Hosting + Maintenance</h2>
+      <p class="card-desc">Fast, reliable hosting setup (GitHub, Vercel, or VPS) with long-term uptime management and update workflows.</p>
+    </div>
+  </div>
+</body>
+</html>
