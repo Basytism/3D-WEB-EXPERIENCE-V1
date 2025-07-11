@@ -196,38 +196,7 @@
     <button id='launchAssistant' class='mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:from-cyan-300 hover:to-blue-400 transition'>Let’s Go</button>
   `;
   setTimeout(() => document.body.appendChild(aiPopup), 2500);
-document.getElementById('toggleMusic').addEventListener('click', function() {
-  const audio = document.getElementById('bgMusic');
-  if (audio.paused) {
-    audio.volume = 0;
-    audio.play();
-    this.textContent = '🔊 Sound On';
-    const fadeIn = setInterval(() => {
-      if (audio.volume < 0.9) {
-        audio.volume = Math.min(audio.volume + 0.1, 1);
-      } else {
-        clearInterval(fadeIn);
-      }
-    }, 150);
-  } else {
-    const fadeOut = setInterval(() => {
-      if (audio.volume > 0.1) {
-        audio.volume = Math.max(audio.volume - 0.1, 0);
-      } else {
-        clearInterval(fadeOut);
-        audio.pause();
-        this.textContent = '🔇 Sound Off';
-      }
-    }, 150);
-  }
-});
-const clickSound = new Audio('https://cdn.pixabay.com/download/audio/2022/10/16/audio_7ec61203b5.mp3?filename=interface-click-124467.mp3');
-document.querySelectorAll('button, a').forEach(el => {
-  el.addEventListener('click', () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  });
-});
+
 
 document.getElementById('startExperience').addEventListener('click', () => {
   document.getElementById('walkthroughModal').classList.remove('hidden');
