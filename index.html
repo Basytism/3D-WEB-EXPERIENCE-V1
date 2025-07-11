@@ -131,7 +131,15 @@
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  </script>
+  </script>// Wait for user interaction to enable autoplay
+window.addEventListener('click', () => {
+  const audio = document.getElementById('bgMusic');
+  if (audio.paused && localStorage.getItem('music') !== 'off') {
+    audio.volume = 0.3;
+    audio.play().catch(e => console.log('Autoplay blocked:', e));
+  }
+}, { once: true });
+
 <script>
   // Scroll-triggered card animation
   const observer = new IntersectionObserver((entries) => {
