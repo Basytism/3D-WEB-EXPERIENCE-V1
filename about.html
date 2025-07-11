@@ -93,14 +93,30 @@
   light.position.set(10, 10, 10);
   scene.add(light);
 
+  // Nebula fog
+  scene.fog = new THREE.FogExp2(0x0f172a, 0.02);
+
+  // Cosmic particles
+  const starGeometry = new THREE.BufferGeometry();
+  const starCount = 1000;
+  const starPositions = new Float32Array(starCount * 3);
+  for (let i = 0; i < starCount * 3; i++) {
+    starPositions[i] = (Math.random() - 0.5) * 300;
+  }
+  starGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+  const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+  const starField = new THREE.Points(starGeometry, starMaterial);
+  scene.add(starField);
+
   camera.position.z = 50;
 
   function animate() {
     requestAnimationFrame(animate);
     wormhole.rotation.x += 0.01;
     wormhole.rotation.y += 0.01;
-    camera.position.z -= 0.02; // simulate camera zoom into wormhole
-    if (camera.position.z < 20) camera.position.z = 50; // loop
+    starField.rotation.y += 0.0005;
+    camera.position.z -= 0.02;
+    if (camera.position.z < 20) camera.position.z = 50;
     renderer.render(scene, camera);
   }
   animate();
@@ -111,7 +127,6 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
   });
 
-  // GSAP cinematic animations
   gsap.utils.toArray('.fade-in').forEach((el, i) => {
     gsap.fromTo(el, { opacity: 0, y: 60 }, {
       opacity: 1,
