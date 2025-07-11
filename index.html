@@ -8,30 +8,7 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js">document.getElementById('launchAssistant').addEventListener('click', () => {
   window.open('https://www.linkedin.com/company/synergy-spheres/', '_blank');
   
-});
-document.addEventListener('click', function(e) {
-  if (e.target && e.target.id === 'submitQuery') {
-    const input = document.getElementById('aiQuery');
-    const response = document.getElementById('responseArea');
-    const question = input.value.toLowerCase();
-    input.value = '';
-    let reply = '🤖 Let me get back to you on that...';
-    if (question.includes('services')) reply = '💼 We offer Web3, SaaS, GPT, Smart Contracts, and more.';
-    else if (question.includes('vision')) reply = '🌌 Our vision is to create AI-first immersive ecosystems.';
-    else if (question.includes('mission')) reply = '🚀 Mission: Scale intelligent digital products for all.';
-    else if (question.includes('contact')) reply = '📬 Contact us at synergyspheres@gmail.com.';
-    response.innerHTML = '';
-    let i = 0;
-    const type = () => {
-      if (i < reply.length) {
-        response.innerHTML += reply.charAt(i);
-        i++;
-        setTimeout(type, 25);
-      }
-    };
-    type();
-  }
-});
+
 </script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
@@ -96,13 +73,7 @@ document.addEventListener('click', function(e) {
 </style>
 </head>
 <body>
-  <div class="fixed top-4 right-4 z-50">
-  <button id="toggleMusic" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded shadow">🔊 Sound On</button>
-</div>
-<audio id="bgMusic" loop>
-  <source src="assets/music.mp3" type="audio/mp3">
-</audio>
-  <canvas id="bgCanvas"></canvas>
+
 
   <!-- Header -->
   <header class="flex justify-between items-center p-6 text-white">
