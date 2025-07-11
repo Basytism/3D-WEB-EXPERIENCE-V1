@@ -66,6 +66,12 @@
   <p class="subtitle">Empower startups, enterprises, and communities by integrating AI, automation, and futuristic UX into their core DNA.</p>
 </section>
 
+<!-- Wormhole Transition -->
+<section id="wormhole" class="fade-in">
+  <h2 class="title">Traversing Wormhole...</h2>
+  <p class="subtitle">Entering the core dimension where technology bends reality.</p>
+</section>
+
 <!-- Dream Level 3: Technology -->
 <section id="scene4" class="fade-in">
   <h2 class="title">Technology</h2>
@@ -78,21 +84,23 @@
   const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  // Portal geometry
-  const geometry = new THREE.TorusGeometry(10, 1.5, 16, 100);
+  const geometry = new THREE.TorusKnotGeometry(10, 2.5, 200, 32);
   const material = new THREE.MeshStandardMaterial({ color: 0x00ffff, wireframe: true });
-  const torus = new THREE.Mesh(geometry, material);
-  scene.add(torus);
+  const wormhole = new THREE.Mesh(geometry, material);
+  scene.add(wormhole);
 
   const light = new THREE.PointLight(0xffffff, 1);
   light.position.set(10, 10, 10);
   scene.add(light);
 
-  camera.position.z = 30;
+  camera.position.z = 50;
+
   function animate() {
     requestAnimationFrame(animate);
-    torus.rotation.x += 0.005;
-    torus.rotation.y += 0.01;
+    wormhole.rotation.x += 0.01;
+    wormhole.rotation.y += 0.01;
+    camera.position.z -= 0.02; // simulate camera zoom into wormhole
+    if (camera.position.z < 20) camera.position.z = 50; // loop
     renderer.render(scene, camera);
   }
   animate();
