@@ -60,8 +60,8 @@
   <div class="fixed top-4 right-4 z-50">
   <button id="toggleMusic" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded shadow">🔊 Sound On</button>
 </div>
-<audio id="bgMusic" loop autoplay>
-  <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_f8b6ec0e00.mp3?filename=cyberpunk-ambient-145054.mp3" type="audio/mp3">
+<audio id="bgMusic" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_fafbfd5a91.mp3?filename=tech-chill-vibes-139371.mp3" type="audio/mp3">
   Your browser does not support the audio element.
 </audio>
   <canvas id="bgCanvas"></canvas>
@@ -81,7 +81,36 @@
   <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
     <h2 class="text-5xl md:text-6xl font-bold mb-4 fade-text">Futuristic 3D Web Experience</h2>
     <p class="text-lg max-w-xl fade-text">AI-Enhanced, Interactive, and Visually Immersive. Built with WebGL, Three.js, and modern UI frameworks.</p>
-    <button class="mt-6 px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full">Start Your Experience</button>
+    <button id="startExperience" class="mt-6 px-6 py-2 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-full">Start Your Experience</button>
+
+<!-- Walkthrough Modal -->
+<div id="walkthroughModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-8">
+  <div class="bg-gray-900 text-white max-w-3xl w-full p-8 rounded-xl shadow-lg overflow-y-auto max-h-[90vh] relative">
+    <button onclick="document.getElementById('walkthroughModal').classList.add('hidden')" class="absolute top-4 right-4 text-cyan-400 hover:text-white">✖</button>
+    <div id="walkthroughSteps">
+      <div class="step mb-10">
+        <h3 class="text-2xl font-bold mb-2 text-cyan-400">🌌 Vision</h3>
+        <p class="text-gray-300">To pioneer futuristic, AI-integrated digital ecosystems that transcend traditional web experiences through immersive design, automation, and decentralized intelligence.</p>
+      </div>
+      <div class="step mb-10">
+        <h3 class="text-2xl font-bold mb-2 text-cyan-400">🚀 Mission</h3>
+        <p class="text-gray-300">Deliver scalable, intelligent, and visually captivating digital products to businesses, creators, and legal innovators using the SynergySpheres methodology.</p>
+      </div>
+      <div class="step mb-10">
+        <h3 class="text-2xl font-bold mb-2 text-cyan-400">🧠 Process</h3>
+        <p class="text-gray-300">Ideation → Research → 3D UI + AI Integration → Web3 Stack (if needed) → Launch → Maintain & Optimize with Data Feedback Loops.</p>
+      </div>
+      <div class="step mb-10">
+        <h3 class="text-2xl font-bold mb-2 text-cyan-400">💼 Services</h3>
+        <p class="text-gray-300">Web3 Platforms, LegalTech, Smart Contracts, SaaS Tools, AI Dashboards, GPT Automation, Visual Branding, and Hosting Solutions.</p>
+      </div>
+      <div class="step">
+        <h3 class="text-2xl font-bold mb-2 text-cyan-400">🌍 Impact</h3>
+        <p class="text-gray-300">Empowering SMEs, creators, legal firms, and technologists through ethical automation, open-source innovation, and transparent digital infrastructure.</p>
+      </div>
+    </div>
+  </div>
+</div>
   </section>
 
   <!-- About -->
@@ -131,15 +160,7 @@
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  </script>// Wait for user interaction to enable autoplay
-window.addEventListener('click', () => {
-  const audio = document.getElementById('bgMusic');
-  if (audio.paused && localStorage.getItem('music') !== 'off') {
-    audio.volume = 0.3;
-    audio.play().catch(e => console.log('Autoplay blocked:', e));
-  }
-}, { once: true });
-
+  </script>
 <script>
   // Scroll-triggered card animation
   const observer = new IntersectionObserver((entries) => {
@@ -200,6 +221,10 @@ document.querySelectorAll('button, a').forEach(el => {
   });
 });
 
+document.getElementById('startExperience').addEventListener('click', () => {
+  document.getElementById('walkthroughModal').classList.remove('hidden');
+  gsap.from('#walkthroughSteps', { y: 50, opacity: 0, duration: 1 });
+});
 </script>
 </body>
 </html>
